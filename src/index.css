@@ -31,3 +31,7 @@ body,
   height: 100%;
   direction: rtl;
 }
+
+.flex-center {
+  @apply flex justify-center items-center;
+}
