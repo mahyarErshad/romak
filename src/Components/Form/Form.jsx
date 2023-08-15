@@ -52,7 +52,7 @@ function Form() {
         });
         const data = await response.json();
         localStorage.setItem("token", data.token);
-        navigate("/");
+        navigate("/products");
       } catch (error) {
         console.error(error);
       }

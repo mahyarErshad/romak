@@ -8,7 +8,7 @@ function LoginPage() {
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (token) {
-      navigate("/");
+      navigate("/products");
     }
   }, [navigate]);
   return (
