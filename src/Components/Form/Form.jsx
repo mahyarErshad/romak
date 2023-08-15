@@ -1,12 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
+import Input from "../Utils/Input/Input";
 
 function Form() {
+  const [userName, setUserName] = useState("");
+  const [password, setPassword] = useState("");
+
+  const formData = [
+    {
+      label: "نام کاربری",
+      setter: setUserName,
+    },
+    {
+      label: "کلمه عبور",
+      setter: setPassword,
+      type: "password",
+    },
+  ];
   return (
     <form className="flex-col gap-4">
-      <div className="flex-col gap-2">
-        <label htmlFor="input">ایمیل خود را وارد نمایید.</label>
-        <input className="p-2 border-2 border-blue-400 hover:border-blue-500 focus-within:border-blue-600 outline-none duration-200 rounded-md" id="input" />
-      </div>
+      {formData.map((item, index) => (
+        <Input key={index} label={item.label} setter={item.setter} type={item.type} />
+      ))}
     </form>
   );
 }
