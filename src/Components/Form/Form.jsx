@@ -7,19 +7,24 @@ function Form() {
 
   const formData = [
     {
+      id: 1,
       label: "نام کاربری",
+      value: userName,
       setter: setUserName,
     },
     {
+      id: 2,
       label: "کلمه عبور",
+      value: password,
       setter: setPassword,
       type: "password",
     },
   ];
+
   return (
     <form className="flex-col gap-4">
-      {formData.map((item, index) => (
-        <Input key={index} label={item.label} setter={item.setter} type={item.type} />
+      {formData.map((item) => (
+        <Input key={item.id} label={item.label} value={item.value} setter={item.setter} type={item.type} />
       ))}
     </form>
   );
