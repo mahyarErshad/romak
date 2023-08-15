@@ -60,7 +60,7 @@ function Products() {
 
   if (loading) return <Loading />;
   return (
-    <section className="w-full h-full p-4 flex justify-center relative">
+    <section className="w-full h-full p-4 flex-col items-center relative">
       <div className="ag-theme-alpine" style={{ width: 600 }}>
         <AgGridReact rowData={rowData} columnDefs={columnDefs} domLayout="autoHeight" />
       </div>
