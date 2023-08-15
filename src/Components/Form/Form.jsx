@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Input from "../Utils/Input/Input";
+import { useNavigate } from "react-router-dom";
 
 function Form() {
   const [userName, setUserName] = useState("");
@@ -7,6 +8,7 @@ function Form() {
   const [error, setError] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
   const formData = [
     {
@@ -50,6 +52,7 @@ function Form() {
         });
         const data = await response.json();
         localStorage.setItem("token", data.token);
+        navigate("/");
       } catch (error) {
         console.error(error);
       }
